@@ -1,0 +1,657 @@
+.investments-dashboard {
+  padding: 22px 18px 125px;
+  background: #f6f7fb;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+.inv-welcome p {
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+.inv-welcome > span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 7px;
+}
+.inv-panel {
+  background: #fff;
+  border: 1px solid #eeeef6;
+  border-radius: 22px;
+  padding: 20px;
+  min-width: 0;
+  box-shadow: 0 3px 10px #30305003;
+}
+.investments-dashboard h2 {
+  font-size: 18px;
+  letter-spacing: -0.35px;
+}
+.demo-controls {
+  border: 1px dashed #d7d7e9;
+  border-radius: 12px;
+  background: #fff8;
+  font-size: 11px;
+  color: #69697e;
+}
+.demo-controls > summary {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  cursor: pointer;
+  min-height: 44px;
+  padding: 8px 12px;
+  list-style: none;
+}
+.demo-controls > summary::-webkit-details-marker {
+  display: none;
+}
+.demo-controls > summary > span {
+  margin-left: auto;
+  color: var(--blue);
+  font-size: 10px;
+}
+.demo-controls[open] > summary {
+  border-bottom: 1px solid #e8e8f2;
+}
+.demo-controls > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+  padding: 10px;
+}
+.demo-controls button,
+.category-filters button,
+.chart-periods button {
+  border-radius: 10px;
+  min-height: 44px;
+  font-size: 12px;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.demo-controls button {
+  border: 1px solid #e6e6f1;
+}
+.demo-controls button[aria-pressed="true"],
+.category-filters button[aria-pressed="true"] {
+  background: #eeedff;
+  color: #3834c7;
+  border-color: #b6b4f6;
+  font-weight: 600;
+}
+.demo-controls > p {
+  padding: 0 12px 12px;
+  line-height: 1.5;
+}
+.inv-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.portfolio-summary .inv-section-heading h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #55556d;
+}
+.portfolio-summary .icon-button {
+  color: var(--blue);
+  margin-right: -9px;
+}
+.portfolio-value {
+  font-size: clamp(26px, 7.5vw, 36px);
+  letter-spacing: -1px;
+  font-weight: 600;
+  line-height: 1.25;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  margin: 5px 0 12px;
+}
+.portfolio-result {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  font-size: 12px;
+  line-height: 1.7;
+}
+.portfolio-result svg {
+  margin-top: 2px;
+}
+.inv-positive {
+  color: #187948;
+}
+.inv-negative {
+  color: #b03345;
+}
+.portfolio-capital {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 17px;
+  margin-top: 17px;
+  border-top: 1px solid #eeeef5;
+  font-size: 12px;
+  flex-wrap: wrap;
+}
+.portfolio-capital > span {
+  color: var(--muted);
+}
+.portfolio-capital strong {
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+.inv-caption {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.portfolio-summary > .inv-caption {
+  margin-top: 7px;
+}
+.portfolio-chart {
+  border-top: 1px solid #eeeef5;
+  margin-top: 21px;
+  padding-top: 21px;
+  min-width: 0;
+}
+.portfolio-chart h2 {
+  font-size: 15px;
+}
+.inv-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 25px;
+  padding: 4px 7px;
+  border-radius: 7px;
+  background: #f4f4fa;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+}
+.chart-change {
+  font-size: 11px;
+  line-height: 1.7;
+  margin: 9px 0 3px;
+  min-height: 38px;
+}
+.chart-change > strong {
+  font-weight: 600;
+}
+.chart-change > span {
+  display: block;
+  color: var(--muted);
+}
+.portfolio-chart-canvas {
+  width: 100%;
+  min-width: 0;
+  height: 190px;
+}
+.chart-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: 9px;
+  color: var(--muted);
+  gap: 8px;
+  margin: 0 0 13px;
+}
+.chart-periods {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 3px;
+  background: #f5f5fa;
+  border-radius: 12px;
+  padding: 4px;
+  margin: 13px 0;
+}
+.chart-periods button {
+  font-size: 11px;
+  color: var(--muted);
+}
+.chart-periods button[aria-pressed="true"] {
+  background: #fff;
+  color: var(--blue);
+  font-weight: 700;
+  box-shadow: 0 2px 5px #30305012;
+}
+.chart-periods button:hover,
+.demo-controls button:hover {
+  background: #e7e7fa;
+}
+.chart-private {
+  height: 216px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #f9f9fd;
+  border-radius: 13px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+  margin: 12px 0;
+}
+.chart-data {
+  margin-top: 8px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.chart-data > summary {
+  min-height: 44px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.chart-table-scroll {
+  max-height: 220px;
+  overflow: auto;
+}
+.chart-data table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 10px;
+}
+.chart-data caption {
+  text-align: left;
+  padding-bottom: 9px;
+}
+.chart-data th,
+.chart-data td {
+  text-align: left;
+  padding: 8px 3px;
+  border-bottom: 1px solid #eeeef5;
+}
+.chart-data td:last-child,
+.chart-data th:last-child {
+  text-align: right;
+}
+.inv-explore-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: var(--pale);
+  color: var(--blue);
+  font-weight: 600;
+  font-size: 13px;
+  border-radius: 12px;
+  min-height: 46px;
+  margin-top: 18px;
+}
+.holdings-section > .inv-caption {
+  margin-top: 8px;
+}
+.holdings-list,
+.explore-list {
+  padding: 0;
+  list-style: none;
+  margin: 10px 0 0;
+}
+.holding-card,
+.explore-asset {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 17px 0;
+  min-width: 0;
+}
+.holdings-list > li + li,
+.explore-list > li + li {
+  border-top: 1px solid #f0f0f5;
+}
+.holdings-list > li:last-child .holding-card {
+  padding-bottom: 0;
+}
+.holding-card > svg,
+.explore-asset > svg {
+  margin-left: auto;
+  color: var(--muted);
+}
+.asset-monogram {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 14px;
+  font-size: 18px;
+  font-weight: 700;
+  background: #f0efff;
+  color: #5b52bd;
+}
+.asset-acciones {
+  color: #20768a;
+  background: #e8f6f7;
+}
+.asset-fondos {
+  color: var(--muted);
+  background: #fff5e6;
+}
+.holding-content,
+.explore-asset > div {
+  min-width: 0;
+}
+.holding-card h3,
+.explore-asset h3 {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.holding-card p,
+.explore-asset p {
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 3px;
+  line-height: 1.6;
+}
+.holding-content > strong {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  margin-top: 9px;
+  font-variant-numeric: tabular-nums;
+}
+.holding-content > span {
+  display: block;
+  font-size: 10px;
+  line-height: 1.6;
+  margin-top: 4px;
+}
+.inv-subtitle {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-top: 8px;
+}
+.category-filters {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+  margin: 16px 0 12px;
+}
+.category-filters button {
+  border: 1px solid #e6e6f1;
+  background: #fff;
+  font-size: 11px;
+  padding: 6px 7px;
+  line-height: 1.4;
+}
+.explore-asset > div > span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  margin-top: 7px;
+}
+.explore-section {
+  scroll-margin-top: 20px;
+}
+.explore-section h2 {
+  scroll-margin-top: 20px;
+}
+.explore-list {
+  margin-bottom: 7px;
+}
+.education-card {
+  padding: 21px 19px;
+  background: #eeedff;
+  border: 1px solid #e2e0fb;
+  border-radius: 22px;
+}
+.education-heading {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.education-heading > span {
+  display: grid;
+  place-items: center;
+  background: #fff9;
+  color: var(--blue);
+  border-radius: 13px;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+.education-heading p,
+.inv-eyebrow {
+  font-size: 9px;
+  letter-spacing: 1px;
+  font-weight: 600;
+  color: #6b66aa;
+  margin-bottom: 6px;
+}
+.education-heading h2 {
+  font-size: 16px;
+  line-height: 1.3;
+}
+.education-card > .inv-subtitle {
+  margin-bottom: 14px;
+}
+.education-card details {
+  border-top: 1px solid #dcdaf4;
+}
+.education-card summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 52px;
+  list-style: none;
+  line-height: 1.5;
+}
+.education-card summary::-webkit-details-marker {
+  display: none;
+}
+.education-card details[open] summary > svg {
+  transform: rotate(180deg);
+}
+.education-card details > p {
+  font-size: 12px;
+  color: #67647e;
+  line-height: 1.8;
+  padding-bottom: 17px;
+}
+.education-source {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-top: 13px;
+}
+.education-source a {
+  color: #4840a5;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.portfolio-empty {
+  text-align: center;
+  padding: 28px 22px;
+}
+.portfolio-empty-icon {
+  display: grid;
+  place-items: center;
+  background: var(--pale);
+  color: var(--blue);
+  height: 88px;
+  width: 88px;
+  border-radius: 26px;
+  margin: 0 auto 22px;
+}
+.portfolio-empty .inv-eyebrow {
+  display: block;
+  margin-bottom: 12px;
+}
+.portfolio-empty h2 {
+  font-size: 26px;
+  line-height: 1.2;
+  letter-spacing: -0.8px;
+}
+.portfolio-empty > p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-top: 16px;
+}
+.portfolio-empty > .primary-button {
+  margin-top: 23px;
+}
+.portfolio-empty > .inv-caption {
+  font-size: 11px;
+  margin-top: 14px;
+}
+.portfolio-error {
+  text-align: center;
+  padding: 30px 22px;
+}
+.portfolio-error > svg {
+  color: #b67332;
+  margin: 0 auto 16px;
+}
+.portfolio-error h2 {
+  font-size: 21px;
+  line-height: 1.35;
+}
+.portfolio-error p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 12px 0 20px;
+}
+.portfolio-skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.skeleton-line,
+.skeleton-chart,
+.skeleton-circle {
+  background: #ededf5;
+  border-radius: 8px;
+  animation: inv-pulse 1.4s ease-in-out infinite;
+}
+.skeleton-line {
+  height: 14px;
+  width: 85%;
+  margin-bottom: 16px;
+}
+.skeleton-line.short {
+  width: 45%;
+}
+.skeleton-line.large {
+  height: 33px;
+  width: 75%;
+}
+.skeleton-chart {
+  height: 170px;
+  width: 100%;
+  margin: 24px 0;
+}
+.skeleton-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 0;
+}
+.skeleton-circle {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  border-radius: 14px;
+}
+.skeleton-row .skeleton-line {
+  margin: 0;
+}
+.inv-secondary-button {
+  border: 1px solid #dbd9f3;
+  background: white;
+  border-radius: 12px;
+  min-height: 46px;
+  font-size: 13px;
+  color: var(--blue);
+  font-weight: 600;
+}
+.investments-dashboard a:hover,
+.investments-dashboard button:hover {
+  filter: brightness(0.98);
+}
+.investments-dashboard button:active {
+  transform: translateY(1px);
+}
+.investments-dashboard summary:focus-visible {
+  outline: 3px solid #24219d;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+@keyframes inv-pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+@media (max-width: 350px) {
+  .investments-dashboard {
+    padding: 18px 12px 125px;
+    gap: 16px;
+  }
+  .inv-panel {
+    padding: 16px;
+  }
+  .portfolio-value {
+    font-size: 27px;
+  }
+  .holding-card,
+  .explore-asset {
+    gap: 9px;
+  }
+  .asset-monogram {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+  .holding-card h3,
+  .explore-asset h3 {
+    font-size: 13px;
+  }
+  .holding-content > strong {
+    font-size: 16px;
+  }
+  .education-card {
+    padding: 18px 15px;
+  }
+  .portfolio-empty h2 {
+    font-size: 24px;
+  }
+  .demo-controls > summary {
+    font-size: 10px;
+    gap: 5px;
+  }
+  .demo-controls > summary > span {
+    font-size: 9px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-line,
+  .skeleton-chart,
+  .skeleton-circle {
+    animation: none;
+  }
+  .demo-controls button,
+  .category-filters button,
+  .chart-periods button {
+    transition: none;
+  }
+  .investments-dashboard button:active {
+    transform: none;
+  }
+}
